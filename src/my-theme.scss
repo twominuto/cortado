@@ -1,0 +1,20 @@
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+
+$cortado-primary: mat-palette($mat-brown);
+$cortado-accent: mat-palette($mat-blue, A200, A100, A400);
+
+$cortado-warn: mat-palette($mat-red);
+
+$cortado-theme: mat-light-theme($cortado-primary, $cortado-accent, $cortado-warn);
+
+
+@include angular-material-theme($cortado-theme)
+
+
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
