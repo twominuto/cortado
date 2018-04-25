@@ -1,11 +1,70 @@
 <section>
-  <form fxLayout="column" fxLayoutAlign="center center" #f="ngForm" (ngSubmit)="onSubmit(f)">
-    <mat-form-field>
-        <input type="email" matInput placeholder="your email" ngModel name="email">
-    </mat-form-field>
-    <mat-form-field>
-        <input type="password" matInput placeholder="your password" ngModel name="password">
-    </mat-form-field>
-    <button type="submit" mat-raised-button color="primary"> Submit </button>
-  </form>
+
+<mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Signup as a Manager
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+  
+      <form fxLayout="column" fxLayoutAlign="center center" #f="ngForm" (ngSubmit)="onSubmit(f)">
+          
+              <mat-form-field>
+                  <input matInput placeholder="your name">
+              </mat-form-field>
+          
+              <mat-form-field>
+                  <input matInput placeholder="your phone number">
+              </mat-form-field>
+          
+              <mat-form-field>
+                  <input matInput type="password" matInput placeholder="your password">
+              </mat-form-field>
+        
+              <mat-form-field>
+                  <input matInput placeholder="name of the store">
+              </mat-form-field>
+          
+              <mat-action-row>
+              <button type="submit" mat-raised-button color="primary"> Submit </button>
+            </mat-action-row>
+            </form>
+    </mat-expansion-panel>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Signup as an employee
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      
+      <form fxLayout="column" fxLayoutAlign="center center" #f="ngForm" (ngSubmit)="onSubmit(f)">
+          
+          <mat-form-field>
+              <input matInput placeholder="store code">
+          </mat-form-field>
+        
+          <mat-form-field>
+              <input matInput placeholder="your name">
+          </mat-form-field>
+      
+          <mat-form-field>
+              <input matInput placeholder="your phone number">
+          </mat-form-field>
+      
+          <mat-form-field>
+              <input matInput placeholder="your password">
+          </mat-form-field>
+      
+          <button type="submit" mat-raised-button color="primary"> Submit </button>
+
+        </form>
+
+
+
+    </mat-expansion-panel>
+  </mat-accordion>
+
+
+  
 </section>
