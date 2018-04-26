@@ -1,0 +1,89 @@
+<style>
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+
+</style>
+
+<p align="right">
+  <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item>Personal Information</button>
+  <button mat-menu-item>Notice Board</button>
+  <button mat-menu-item>Schedule</button>
+  <button mat-menu-item>Inventory Status</button>
+  <button mat-menu-item>Private Message to the Manager</button>
+  <button mat-menu-item>Logout</button>
+</mat-menu>
+</p>
+
+
+<mat-toolbar class = "Babies">Cortado</mat-toolbar>
+
+
+<mat-divider></mat-divider>
+
+<mat-card>
+    <mat-card-content>
+      <h2 class="example-h2">Worker's Page</h2>
+      <mat-tab-group class="demo-tab-group">
+        <mat-tab label="Welcome">
+          <div class="demo-tab-content">
+           Welcome "User's name", this is the worker's page
+          </div>
+        </mat-tab>
+        <mat-tab label="Direction">
+          <div class="demo-tab-content">
+            You will be demonstrated the direction <br>
+            1. Check Notice Board <br>
+            2. Check Schedule <br>
+            3. Check Inventory Status <br>
+            
+            optional: send private message
+          </div>  
+        </mat-tab>
+        <mat-tab label="Love">
+          No content  
+        </mat-tab>
+      </mat-tab-group>
+    </mat-card-content>
+  </mat-card>
+
+<mat-divider></mat-divider>
+
+  <div class="example-container mat-elevation-z8">
+    <div class="example-header">
+      <mat-form-field>
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+      </mat-form-field>
+    </div>
+  
+    <mat-table #table [dataSource]="dataSource">
+  
+      <!-- Position Column -->
+      <ng-container matColumnDef="position">
+        <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
+      </ng-container>
+  
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+      </ng-container>
+  
+      <!-- Weight Column -->
+      <ng-container matColumnDef="weight">
+        <mat-header-cell *matHeaderCellDef> Work Hour </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.workhour}} </mat-cell>
+      </ng-container>
+  
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="symbol">
+        <mat-header-cell *matHeaderCellDef> Symbol </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.symbol}} </mat-cell>
+      </ng-container>
+  
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  </div>
+  
